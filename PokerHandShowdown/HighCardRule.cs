@@ -8,6 +8,10 @@ namespace PokerHandShowdown
 {
     public class HighCardRule : IRule
     {
+        /// <summary>
+        /// Determines which players win using a high card rule.
+        /// </summary>
+        /// <returns>list of winning players</returns>
         public List<Player> Apply(Round round)
         {
             List<Player> winners = new List<Player>();

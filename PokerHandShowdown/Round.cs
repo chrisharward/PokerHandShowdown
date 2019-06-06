@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace PokerHandShowdown
 {
+    /// <summary>
+    /// Responsible for building a round object, which is a list of players and their hands
+    /// for this game.
+    /// </summary>
     public class RoundBuilder
     {
         public RoundBuilder(TextReader reader)
@@ -31,10 +35,17 @@ namespace PokerHandShowdown
         private Tokenizer tokenizer_;
     }
 
+    /// <summary>
+    /// Represents a single round of poker, players and their hands for the round.
+    /// </summary>
     public class Round
     {
         public List<Player> Players { get; } = new List<Player>();
 
+        /// <summary>
+        /// Play this round, calculate who the winners are
+        /// </summary>
+        /// <returns>a list of winners for this round</returns>
         public List<Player> Play()
         {
             if (Players.Count == 0)

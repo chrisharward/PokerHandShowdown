@@ -8,6 +8,10 @@ namespace PokerHandShowdown
 {
     public abstract class RepeatedRankRule : IRule
     {
+        /// <summary>
+        /// Determines if winners can be found using a repeated rank rule (one pair, three of a kind).
+        /// </summary>
+        /// <returns>list of winners, empty list if no one wins under this rule.</returns>
         public List<Player> Apply(Round round)
         {
             var winners = new List<Player>();
@@ -40,6 +44,10 @@ namespace PokerHandShowdown
             return winners;
         }
 
+        /// <summary>
+        /// Does players hand contain the type we're interested in
+        /// </summary>
+        /// <returns>true if present</returns>
         protected abstract bool ContainsType(Player player);
     }
 }

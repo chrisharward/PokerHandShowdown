@@ -15,6 +15,9 @@ namespace PokerHandShowdown
             tokens_ = new Queue<string>();
         }
 
+        /// <summary>
+        /// Gets the next token in the fifo queue, refreshes queue if queue is empty.
+        /// </summary>
         public string NextToken()
         {
             Refresh();
@@ -28,6 +31,9 @@ namespace PokerHandShowdown
             }
         }
 
+        /// <summary>
+        /// Reads the current line and splits into a fifo queue if the queue is empty.
+        /// </summary>
         private void Refresh()
         {
             if (tokens_.Count == 0)

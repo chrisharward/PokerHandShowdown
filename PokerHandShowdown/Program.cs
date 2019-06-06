@@ -17,13 +17,13 @@ namespace PokerHandShowdown
                 var round = new RoundBuilder(new StreamReader(Console.OpenStandardInput())).Build();
                 if (round.Players.Count == 0)
                 {
-                    Console.WriteLine("Incorrect input format - no players specified\r\n");
+                    Console.WriteLine("\r\nError - no players specified\r\n");
                     PrintHelp();
                 }
                 else
                 {
                     var winners = round.Play();
-                
+
                     int i = 0;
                     foreach (var player in winners)
                     {
@@ -38,7 +38,7 @@ namespace PokerHandShowdown
             }
             catch (Exception ex)
             {
-                Console.WriteLine(String.Format("Incorrect input format - {0}\r\n", ex.Message));
+                Console.WriteLine(String.Format("\r\nError - {0}\r\n", ex.Message));
                 PrintHelp();
             }
         }

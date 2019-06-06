@@ -8,6 +8,10 @@ namespace PokerHandShowdown
 {
     public class FlushRule : IRule
     {
+        /// <summary>
+        /// Determines if any players in this round have flush hands, and which ones are the winners if so.
+        /// </summary>
+        /// <returns>list of winners, empty list if no one wins under this rule.</returns>
         public List<Player> Apply(Round round)
         {
             var winners = new List<Player>();
@@ -15,7 +19,7 @@ namespace PokerHandShowdown
             {
                 return winners;
             }
-            
+
             foreach (var player in round.Players)
             {
                 if (!player.Flush)

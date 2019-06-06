@@ -8,6 +8,9 @@ namespace PokerHandShowdown
 {
     public class ThreeOfAKindRule : RepeatedRankRule
     {
+        /// <summary>
+        /// Determines whether or not a players hand contains 3 of a kind.
+        /// </summary>
         protected override bool ContainsType(Player player)
         {
             return player.SortedRankFrequency[0].Item1 > 2;
